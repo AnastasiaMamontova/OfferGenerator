@@ -5,14 +5,17 @@
 		<script type="text/javascript">
 			window.onload = function funLoad() {
 				var searchParams = new URLSearchParams(window.location.search);
-				//p.get('name')
-				//p.get("surname")
+				var name = searchParams.get('name');
+				var surname = searchParams.get('surname');
+				var fullname = name + ' ' + surname + ',';
+				var fullnameSpan = document.getElementById('fullnameSpan');
+				fullnameSpan.textContent = fullname;
 			};
 		</script>
 	</head>
 	<body>
 		<div>			
-			<span style="margin-left: 1.5em; font-weight: bold; text-transform: uppercase;">Name Surname,</span>
+			<span id="fullnameSpan" style="margin-left: 1.5em; font-weight: bold; text-transform: uppercase;">Name Surname,</span>
 		</div>
 	</body>
 </html>
